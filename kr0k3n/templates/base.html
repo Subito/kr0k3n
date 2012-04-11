@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/screen.css" />
+  </head>
+  <body>
+    <div id="container">
+      <div id="header">
+        {% block header %}
+        <h1>kr0k3n</h1>
+        {% endblock %}
+      </div>
+      <div id="nav_top">
+        {% block nav_top %}
+        <ul>
+          <li><a href="#">Stream</a></li>
+          <li><a href="#">Notes</a></li>
+          <li><a href="#">Images</a></li>
+          <li><a href="#">Collections</a></li>
+        </ul>
+        {% endblock %}
+      </div>
+      <div id="nav_right">
+        {% block nav_right %}
+        <ul>
+          <li><a href="#">Add</a></li>
+          <li><a href="#">Edit</a></li>
+          <li><a href="#">Delete</a></li>
+          <li><a href="#">Tags</a></li>
+        </ul>
+        {% endblock %}
+      </div>
+      <div id="content">
+        {% block content %}
+        <h3>Basis</h3>
+        <p>Dieses Template ist ohne Inhalt, es wird nur vererbt!</p>
+        {% endblock %}
+      </div>
+      <div class="clear"></div>
+    </div>
+  </body>
+</html>

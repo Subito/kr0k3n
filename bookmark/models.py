@@ -2,6 +2,7 @@ from django.db import models
 
 class Bookmark(models.Model):
     url = models.URLField()
+    title = models.CharField(max_length=50)
     description = models.TextField(blank=True)
     created = models.DateTimeField(auto_now_add=True)
 

@@ -3,7 +3,8 @@ from django.db import models
 from stream.models import StreamItem
 
 class Collection(models.Model):
-    name = models.CharField(max_length=50)
+    title = models.CharField(max_length=50)
+    description = models.TextField(blank=True)
     items = models.ManyToManyField(StreamItem, through='Collection_Items')
     created = models.DateTimeField(auto_now_add=True)
 

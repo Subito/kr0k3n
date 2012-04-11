@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>Stream</h3>
+{% for i in items %}
+<div class="item">
+  <h4>{{ i.content_object.title }}</h4>
+  <p>{{ i.content_object.description }}</p>
+  {% if i.content_type.name == "image" %}
+  <img src="{{ i.content_object.image.url  }}" />
+  {% endif %}
+  <div class="item_bottom">
+    <h5>{{i.content_type}}</h5>
+    <a href="#">Delete</a><br /><a href="#">Modify</a>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}
