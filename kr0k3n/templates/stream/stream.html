@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% block content %}
-<h3>Stream</h3>
 {% for i in items %}
 <div class="item">
   <h4>{{ i.content_object.title }}</h4>
@@ -8,10 +7,15 @@
   {% if i.content_type.name == "image" %}
   <img src="{{ i.content_object.image.url  }}" />
   {% endif %}
-  <div class="item_bottom">
-    <h5>{{i.content_type}}</h5>
-    <a href="#">Delete</a><br /><a href="#">Modify</a>
+  <div class="actions">
+    <ul id="icons" class="ui-widget ui-helper-clearfix">
+      <li class="ui-state-default ui-corner-all" title="Add"><span class="ui-icon ui-icon-plusthick"></span></li>
+      <li class="ui-state-default ui-corner-all" title="Edit"><span class="ui-icon ui-icon-pencil"></span></li>
+      <li class="ui-state-default ui-corner-all" title="Delete"><span class="ui-icon ui-icon-trash"></span></li>
+    </ul>
+    [[TAGS]]
   </div>
+  <div class="clear"></div>
 </div>
 {% endfor %}
 {% endblock %}
