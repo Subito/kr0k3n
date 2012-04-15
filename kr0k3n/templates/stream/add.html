@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<form enctype="multipart/form-data" action method="POST" id="item_add_form">
+{{ form.as_ul }}
+{% csrf_token %}
+<input type="submit" />
+</form>
+{% endblock %}
