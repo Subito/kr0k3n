@@ -8,12 +8,10 @@
   <img src="{{ i.content_object.image.url  }}" />
   {% endif %}
   <div class="actions">
-    <ul id="icons" class="ui-widget ui-helper-clearfix">
-      <li class="ui-state-default ui-corner-all" title="Add"><span class="ui-icon ui-icon-plusthick"></span></li>
       <li class="ui-state-default ui-corner-all" title="Edit"><span class="ui-icon ui-icon-pencil"></span></li>
       <li class="ui-state-default ui-corner-all" title="Delete"><span class="ui-icon ui-icon-trash"></span></li>
     </ul>
-    [[TAGS]]
+    <input type="text" id="tag-input-{{ i.pk }}" class="tag-input" name="Tags" />
   </div>
   <div class="clear"></div>
 </div>
