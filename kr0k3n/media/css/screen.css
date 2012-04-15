@@ -1,0 +1,122 @@
+#container {
+    margin: 0 auto;
+    width: 800px;
+}
+
+#header {
+    border: 1px solid black;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+#nav_top {
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+#nav_top ul {
+    list-style: none;
+}
+
+#nav_top ul li {
+    display: inline;
+}
+
+#nav_top ul li a {
+    border: 1px dotted green;
+    padding: 5px 10px;;
+    margin: 5px;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#nav_top ul li a:hover {
+    border: 1px solid green;
+    background-color: #c1c1c1;
+}
+
+a.item_actions {
+    border: 1px dotted green;
+    padding: 5px;
+    color: black;
+    text-decoration: none;
+}
+
+a.item_actions:hover {
+    border: 1px solid green;
+    background-color: #c1c1c1;
+}
+
+
+
+#nav_right {
+    border: 1px dotted green;
+    padding: 5px;
+}
+
+#nav_right ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 110px;
+}
+
+#nav_right ul li {
+    display: inline;
+}
+
+#nav_right ul li a {
+    display: block;
+    width: 80px;
+    border: 1px dotted green;
+    margin: 10px;
+    padding: 5px;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#nav_right ul li a:hover {
+    border: 1px solid green;
+    background-color: #c1c1c1;
+}
+
+#content {
+    float: left;
+    width: 83%;
+    padding: 0 10px;
+}
+
+.clear {
+    clear: both;
+}
+
+.item {
+    margin: 5px;
+    padding: 15px;
+}
+
+/*
+.actions {
+    float: right;
+}
+*/
+
+ul#icons {margin: 0; padding: 0;}
+ul#icons li {
+    margin: 2px; 
+    position: relative; 
+    padding: 4px 0; 
+    cursor: pointer; 
+    float: left;  
+    list-style: none;
+}
+
+ul#icons span.ui-icon {float: left; margin: 0 4px;}
+
+.item_bottom {
+    border: 1px solid blue;
+    margin: 5px;
+    padding: 5px;
+}
