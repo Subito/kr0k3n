@@ -1,8 +1,6 @@
 #container {
     margin: 0 auto;
-    border: 1px dashed black;
-    width: 900px;
-    padding: 10px;
+    width: 800px;
 }
 
 #header {
@@ -12,7 +10,6 @@
 }
 
 #nav_top {
-    border: 1px dotted green;
     padding: 5px;
     margin-bottom: 10px;
 }
@@ -39,8 +36,21 @@
     background-color: #c1c1c1;
 }
 
+a.item_actions {
+    border: 1px dotted green;
+    padding: 5px;
+    color: black;
+    text-decoration: none;
+}
+
+a.item_actions:hover {
+    border: 1px solid green;
+    background-color: #c1c1c1;
+}
+
+
+
 #nav_right {
-    float: right;
     border: 1px dotted green;
     padding: 5px;
 }
@@ -50,6 +60,10 @@
     margin: 0;
     padding: 0;
     width: 110px;
+}
+
+#nav_right ul li {
+    display: inline;
 }
 
 #nav_right ul li a {
@@ -69,7 +83,6 @@
 }
 
 #content {
-    border: 1px dotted blue;
     float: left;
     width: 83%;
     padding: 0 10px;
@@ -80,10 +93,27 @@
 }
 
 .item {
-    border: 1px dashed blue;
     margin: 5px;
-    padding: 5px;
+    padding: 15px;
 }
+
+/*
+.actions {
+    float: right;
+}
+*/
+
+ul#icons {margin: 0; padding: 0;}
+ul#icons li {
+    margin: 2px; 
+    position: relative; 
+    padding: 4px 0; 
+    cursor: pointer; 
+    float: left;  
+    list-style: none;
+}
+
+ul#icons span.ui-icon {float: left; margin: 0 4px;}
 
 .item_bottom {
     border: 1px solid blue;
