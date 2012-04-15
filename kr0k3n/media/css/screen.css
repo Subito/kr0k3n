@@ -103,6 +103,24 @@ a.item_actions:hover {
 }
 */
 
+ul#add_icon { 
+    margin: 0;
+    position: relative;
+    float: right;
+    position: relative;
+    cursor: pointer;
+    padding: 4px 0;
+    list-style: none;
+}
+
+#add_type {
+    display: none;
+}
+
+#add_type ul {
+    list-style: none;
+}
+
 ul#icons {margin: 0; padding: 0;}
 ul#icons li {
     margin: 2px; 

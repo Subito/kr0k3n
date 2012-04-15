@@ -25,6 +25,16 @@
               <li class="ui-state-default ui-corner-all" title="Add"><span class="ui-icon ui-icon-plusthick"></span></li>
             </ul>
 
+            <div id="add_type" style="position: absolute; width: 150px; right: 20px; top: 70px; padding: 10px;" class="ui-widget ui-widget-content ui-corner-all">
+              <div class="ui-dialog-content ui-widget-content" style="background: none; border: 0;">
+                <ul>
+                  <li><a href="{% url sv_add_item 'note' %}">Note</a></li>
+                  <li><a href="{% url sv_add_item 'image' %}">Image</a></li>
+                  <li><a href="{% url sv_add_item 'bookmark' %}">Bookmark</a></li>
+                </ul>
+              </div>
+            </div>
+              
         {% endblock %}
       <div id="content">
         {% block content %}

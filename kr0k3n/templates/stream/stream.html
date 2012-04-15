@@ -9,7 +9,7 @@
   {% endif %}
   <div class="actions">
     <ul id="icons" class="ui-widget ui-helper-clearfix">
-      <li class="ui-state-default ui-corner-all" title="Edit"><span class="ui-icon ui-icon-pencil"></span></li>
+      <li class="ui-state-default ui-corner-all" title="Edit"><a href="{% url sv_edit_item i.content_type.name i.pk %}"><span class="ui-icon ui-icon-pencil"></span></a></li>
       <li class="ui-state-default ui-corner-all" title="Delete"><span class="ui-icon ui-icon-trash"></span></li>
     </ul>
     <input type="text" id="tag-input-{{ i.pk }}" class="tag-input" name="Tags" />

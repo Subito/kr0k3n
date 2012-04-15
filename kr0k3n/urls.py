@@ -10,7 +10,7 @@ urlpatterns = patterns('',
                        url(r'^admin/', include(admin.site.urls)),
                        url(r'^media/(?P<path>.*)$', 'django.views.static.serve',
                            {'document_root': settings.MEDIA_ROOT}),
-                       url(r'item/(?P<item_id>\d+)/', 'stream.views.details', name='sv_details'),
+                       url(r'item/', include('stream.urls')),
                        url(r'tag/', include('tagging.urls')),
                        url(r'', 'stream.views.home', name='sv_home'),
 )
