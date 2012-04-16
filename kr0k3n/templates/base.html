@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/screen.css" />
+    <link type="text/css" href="{{ MEDIA_URL }}js/css/kr0k3n/jquery-ui-1.8.18.custom.css" rel="stylesheet" />	
+    <script type="text/javascript" src="{{ MEDIA_URL }}js/js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}js/js/jquery-ui-1.8.18.custom.min.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}js/kr0k3n.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.tokeninput.js"></script>
+    <link rel="stylesheet" href="{{ MEDIA_URL }}js/styles/token-input.css" type="text/css" />
+    <link rel="stylesheet" href="{{ MEDIA_URL }}js/styles/token-input-facebook.css" type="text/css" />
+  </head>
+  <body>
+    <div id="container">
+        {% block nav_top %}
+        <div id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+	  <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+	    <li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active nav_top"><a href="/">Stream</a></li>
+	    <li class="ui-state-default ui-corner-top nav_top"><a href="/notes/">Notes</a></li>
+	    <li class="ui-state-default ui-corner-top nav_top"><a href="/images/">Images</a></li>
+            <li class="ui-state-default ui-corner-top nav_top"><a href="/collections/">Collections</a></li>
+	    </ul>
+
+
+            <ul id="add_icon" class="ui-widget ui-helper-clearfix">
+              <li class="ui-state-default ui-corner-all" title="Add"><span class="ui-icon ui-icon-plusthick"></span></li>
+            </ul>
+
+            <div id="add_type" style="position: absolute; width: 150px; right: 20px; top: 70px; padding: 10px;" class="ui-widget ui-widget-content ui-corner-all">
+              <div class="ui-dialog-content ui-widget-content" style="background: none; border: 0;">
+                <ul>
+                  <li><a href="{% url sv_add_item 'note' %}">Note</a></li>
+                  <li><a href="{% url sv_add_item 'image' %}">Image</a></li>
+                  <li><a href="{% url sv_add_item 'bookmark' %}">Bookmark</a></li>
+                </ul>
+              </div>
+            </div>
+              
+        {% endblock %}
+      <div id="content">
+        {% block content %}
+        {% endblock %}
+      </div>
+      <div class="clear"></div>
+    </div>
+  </body>
+</html>
