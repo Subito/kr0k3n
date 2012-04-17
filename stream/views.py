@@ -65,6 +65,7 @@ def delete_item(request, item_id=None):
         messages.error(request, 'Unknown Object')
         return HttpResponseRedirect(reverse('sv_home'))
     item = StreamItem.objects.get(pk=item_id)
+    item.content_object.delete()
     item.delete()
     messages.info(request, 'Item deleted')
     return HttpResponseRedirect(reverse('sv_home'))
