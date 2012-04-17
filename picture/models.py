@@ -1,5 +1,4 @@
 from django.db import models
-from django.contrib.contenttypes import generic
 
 class Image(models.Model):
     image = models.ImageField(upload_to='images/%Y/%m/%d')

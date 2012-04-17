@@ -1,5 +1,4 @@
 from django.db import models
-from django.contrib.contenttypes import generic
 
 class Bookmark(models.Model):
     url = models.URLField()

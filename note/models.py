@@ -1,5 +1,4 @@
 from django.db import models
-from django.contrib.contenttypes import generic
 
 class Note(models.Model):
     title = models.CharField(max_length=100)
