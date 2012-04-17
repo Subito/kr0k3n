@@ -18,6 +18,8 @@ class StreamItem(models.Model):
     content_type = models.ForeignKey(ContentType)
     content_object = generic.GenericForeignKey('content_type', 'object_id')
     created = models.DateTimeField(auto_now_add=True)
+    parent = models.ForeignKey('self', blank=True, null=True)
+    display = models.BooleanField(default=True)
 
     def __unicode__(self):
         return '<Item %s>' % self.pk
