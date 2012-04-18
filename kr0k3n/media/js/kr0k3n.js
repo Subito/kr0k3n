@@ -21,7 +21,7 @@ $(function(){
                        'slug': item.name,
                        'item': item_id
                    }),
-            }
+            },
         onDelete: function(item) {
             item_id = this[0].id.split('-')[2]
             $.post('/tag/delete/',
@@ -30,6 +30,6 @@ $(function(){
                        'slug': item.name,
                        'item': item_id
                    });
-            }
+            },
     });
 });
