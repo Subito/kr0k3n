@@ -7,6 +7,7 @@ from django.forms.models import modelform_factory
 from django.contrib import messages
 
 from stream.models import StreamItem
+from tagging.models import Tag, TaggedItem
 
 def home(request, template_name='stream/stream.html'):
     items = StreamItem.objects.order_by('-created').exclude(display=False)[:20]
@@ -51,6 +52,8 @@ def edit_item(request, item_type=None, item_id=None, template_name='stream/add.h
             su_type = ContentType.objects.get_for_model(successor)
             successor_item = StreamItem.objects.get(content_type=su_type, object_id=successor.pk)
             successor_item.parent = item
+            for tag in TaggedItem.objects.filter(item=item):
+                TaggedItem.objects.create(tag=tag.tag, item=successor_item)
             successor_item.save()
             messages.success(request, 'Item edited')
             return HttpResponseRedirect(reverse('sv_home'))
