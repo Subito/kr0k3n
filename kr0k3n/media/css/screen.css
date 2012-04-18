@@ -1,3 +1,16 @@
+label {
+    display: block;
+    font-style: italic;
+}
+
+input {
+    width: 400px;
+}
+
+textarea {
+    width: 400px;
+}
+
 #container {
     margin: 0 auto;
     width: 800px;
@@ -83,8 +96,6 @@ a.item_actions:hover {
 }
 
 #content {
-    float: left;
-    width: 83%;
     padding: 0 10px;
 }
 
@@ -137,4 +148,9 @@ ul#icons span.ui-icon {float: left; margin: 0 4px;}
     border: 1px solid blue;
     margin: 5px;
     padding: 5px;
+}
+
+#item_add_form {
+    width: 400px;
+    margin: 5px auto;
 }
