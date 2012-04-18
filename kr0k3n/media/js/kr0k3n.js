@@ -12,6 +12,24 @@ $(function(){
 	function() { $(this).removeClass('ui-state-hover'); }
     );
     $(".tag-input").tokenInput("/tag/query/", {
-        theme: "facebook"
+        theme: "facebook",
+        onAdd: function(item) {
+            item_id = this[0].id.split('-')[2]
+            $.post('/tag/add/',
+                   {
+                       'id': item.id,
+                       'slug': item.name,
+                       'item': item_id
+                   }),
+            }
+        onDelete: function(item) {
+            item_id = this[0].id.split('-')[2]
+            $.post('/tag/delete/',
+                   {
+                       'id': item.id,
+                       'slug': item.name,
+                       'item': item_id
+                   });
+            }
     });
 });
