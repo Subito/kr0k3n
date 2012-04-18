@@ -20,7 +20,7 @@ $(function(){
                        'id': item.id,
                        'slug': item.name,
                        'item': item_id
-                   }),
+                   });
             },
         onDelete: function(item) {
             item_id = this[0].id.split('-')[2]
@@ -30,6 +30,6 @@ $(function(){
                        'slug': item.name,
                        'item': item_id
                    });
-            },
+            }
     });
 });
