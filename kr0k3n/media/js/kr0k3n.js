@@ -49,7 +49,7 @@ function fillTags() {
 function getTags(item_id) {
     $.ajax({
         type: 'POST',
-        url: 'tag/get/',
+        url: '/tag/get/',
         async: false,
         data: {'item': item_id},
         success: function(data) {
