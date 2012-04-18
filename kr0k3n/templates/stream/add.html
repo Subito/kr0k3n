@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
-<form enctype="multipart/form-data" action method="POST" id="item_add_form">
-{{ form.as_ul }}
-<input type="text" id="tag-input-{{ item.pk }}" class="tag-input" name="Tags" />
-{% csrf_token %}
-<input type="submit" />
-</form>
+<div class="form">
+  <form enctype="multipart/form-data" action method="POST" id="item_add_form">
+    {{ form.as_table }}
+    <label for="tags">Tags:</label>
+    <input type="text" id="tag-input-{{ item.pk }}" class="tag-input" name="tags" />
+    {% csrf_token %}
+    <input type="submit" />
+  </form>
+</div>
 {% endblock %}
