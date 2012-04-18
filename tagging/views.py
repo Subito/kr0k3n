@@ -38,7 +38,7 @@ def add_tag(request):
 def delete_tag(request):
     if request.method == 'POST':
         item = get_object_or_404(StreamItem, pk=request.POST['item'])
-        tag, created = Tag.objects.get(slug=request.POST['slug'])
+        tag = Tag.objects.get(slug=request.POST['slug'])
         tagged_item = TaggedItem.objects.get(tag=tag, item=item)
         tagged_item.delete()
         return HttpResponse(json.dumps('SUCCESS'), mimetype='application/json')
