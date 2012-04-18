@@ -26,6 +26,16 @@ def query(request):
     return HttpResponse(json.dumps('no query'), mimetype='application/json')
 
 @csrf_exempt
+def get_tags(request):
+    if request.method == 'POST':
+        item = get_object_or_404(pk=request.POST['item'])
+        tagged_items = TaggedItem.objects.filter(item=item)
+        tags = []
+        for tag in tagged_items:
+            tags.append({'id': tag.pk, 'name': tag.slug})
+        return HttpResponse(json.dumps(tags), mimetype='application/json')
+
+@csrf_exempt
 def add_tag(request):
     if request.method == 'POST':
         item = get_object_or_404(StreamItem, pk=request.POST['item'])
