@@ -2,6 +2,7 @@
 {% block content %}
 <form enctype="multipart/form-data" action method="POST" id="item_add_form">
 {{ form.as_ul }}
+<input type="text" id="tag-input-{{ item.pk }}" class="tag-input" name="Tags" />
 {% csrf_token %}
 <input type="submit" />
 </form>
