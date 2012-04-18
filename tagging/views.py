@@ -28,11 +28,11 @@ def query(request):
 @csrf_exempt
 def get_tags(request):
     if request.method == 'POST':
-        item = get_object_or_404(pk=request.POST['item'])
+        item = get_object_or_404(StreamItem, pk=request.POST['item'])
         tagged_items = TaggedItem.objects.filter(item=item)
         tags = []
         for tag in tagged_items:
-            tags.append({'id': tag.pk, 'name': tag.slug})
+            tags.append({'id': tag.tag.pk, 'name': tag.tag.slug})
         return HttpResponse(json.dumps(tags), mimetype='application/json')
 
 @csrf_exempt
@@ -40,7 +40,7 @@ def add_tag(request):
     if request.method == 'POST':
         item = get_object_or_404(StreamItem, pk=request.POST['item'])
         tag, created = Tag.objects.get_or_create(slug=request.POST['slug'])
-        tagged_item = TaggedItem(tag=tag, item=item)
+        tagged_item, created = TaggedItem.objects.get_or_create(tag=tag, item=item)
         tagged_item.save()
         return HttpResponse(json.dumps(tagged_item.pk), mimetype='application/json')
 
