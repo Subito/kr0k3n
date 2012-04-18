@@ -14,7 +14,7 @@ $(function(){
     $(".tag-input").tokenInput("/tag/query/", {
         theme: "facebook",
         onAdd: function(item) {
-            item_id = this[0].id.split('-')[2]
+            item_id = this[0].id.split('-')[2];
             $.post('/tag/add/',
                    {
                        'id': item.id,
@@ -23,7 +23,7 @@ $(function(){
                    });
             },
         onDelete: function(item) {
-            item_id = this[0].id.split('-')[2]
+            item_id = this[0].id.split('-')[2];
             $.post('/tag/delete/',
                    {
                        'id': item.id,
@@ -32,4 +32,32 @@ $(function(){
                    });
             }
     });
+    fillTags();
 });
+
+function fillTags() {
+    var inputs = $('.tag-input');
+    for(var i = 0; i < inputs.length; i++){
+        id = inputs[i].id.split('-')[2];
+        tags = getTags(id);
+        for(var n = 0; n < tags.length; n++){
+            $(inputs[i]).tokenInput('add', tags[n]);
+        }
+    }
+}
+
+function getTags(item_id) {
+    $.ajax({
+        type: 'POST',
+        url: 'tag/get/',
+        async: false,
+        data: {'item': item_id},
+        success: function(data) {
+            ajaxResponse = data;
+        },
+        error: function(data) {
+            ajaxResponse = [{id: null, name: 'Unable to load tags'}];
+        },
+    });
+    return ajaxResponse;
+}
